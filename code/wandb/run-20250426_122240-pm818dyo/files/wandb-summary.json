@@ -1,0 +1,1 @@
+{"eval/ndcg@200":0.0408,"eval/ndcg@5":0.0241,"_wandb":{"runtime":369},"eval/recall@5":0.0317,"eval/recall@200":0.1178,"eval/recall@10":0.0429,"eval/ndcg@50":0.034,"eval/ndcg@10":0.0278,"eval/recall@50":0.0718}

@@ -1,0 +1,1 @@
+| | SASRec | LLMIDRec | |:---|:---| | 核心机制 | 小型Transformer（轻量self-attention）学习用户点击序列 | 把用户历史item ID embedding输入到大语言模型（LLM），用LLM来学习兴趣演变 | | 主要模块 | 自建轻量TransformerEncoder（比如2~4层） | 直接调用预训练的强大LLM（比如Llama、BERT） | | 目标 | 预测下一个item（自回归序列预测） | 通过NCE对比学习，检索出用户感兴趣的item集合 | | 物品表示 | 纯粹靠ID embedding学习 | 物品ID embedding + 线性投影适配到LLM输入维度 |

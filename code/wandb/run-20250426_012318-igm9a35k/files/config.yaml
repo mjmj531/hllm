@@ -1,0 +1,137 @@
+_wandb:
+    value:
+        cli_version: 0.19.10
+        m: []
+        python_version: 3.9.22
+        t:
+            "1":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 53
+                - 55
+                - 77
+                - 106
+            "2":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 53
+                - 55
+                - 77
+                - 106
+            "3":
+                - 7
+                - 16
+                - 23
+                - 55
+            "4": 3.9.22
+            "5": 0.19.10
+            "6": 4.51.3
+            "8":
+                - 5
+            "12": 0.19.10
+            "13": linux-x86_64
+final_config_dict:
+    value:
+        MAX_ITEM_LIST_LENGTH: 4
+        MAX_TEXT_LENGTH: 16
+        MODEL_INPUT_TYPE: SEQ
+        checkpoint_dir: /home/stu2/HLLM/checkpoint_dir
+        data_path: ../dataset/
+        dataset: amazon_books_first_half
+        device: cuda:0
+        epochs: 5
+        eval_batch_size: 16
+        eval_step: 1
+        eval_type: RANKING
+        item_emb_token_n: 1
+        item_llm_init: true
+        item_pretrain_dir: TinyLlama/TinyLlama-1.1B-step-50K-105b
+        item_prompt: 'Compress the following sentence into embedding: '
+        log_wandb: true
+        loss: nce
+        metric_decimal_place: 4
+        metrics:
+            - Recall
+            - NDCG
+        model: HLLM
+        optim_args:
+            learning_rate: 0.0001
+            weight_decay: 0.01
+        precision: bf16-mixed
+        reproducibility: true
+        scheduler_args:
+            type: cosine
+            warmup: 0.1
+        seed: 2020
+        show_progress: true
+        stage: 2
+        state: INFO
+        stopping_step: 5
+        strategy: deepspeed
+        text_keys:
+            - title
+            - description
+        text_path: /home/stu2/HLLM/information/amazon_books_first_half.csv
+        topk:
+            - 5
+            - 10
+            - 50
+            - 200
+        train_batch_size: 1
+        use_ft_flash_attn: true
+        use_text: true
+        user_llm_init: true
+        user_pretrain_dir: TinyLlama/TinyLlama-1.1B-step-50K-105b
+        val_only: true
+        valid_metric: NDCG@200
+        valid_metric_bigger: true
+        wandb_project: REC
+model_class:
+    value: REC.model.HLLM.hllm.HLLM
+parameters:
+    value:
+        Dataset:
+            - MAX_TEXT_LENGTH
+            - MAX_ITEM_LIST_LENGTH
+            - MAX_ITEM_LIST_LENGTH_TEST
+            - num_negatives
+            - text_keys
+            - item_prompt
+        Evaluation:
+            - eval_type
+            - repeatable
+            - metrics
+            - topk
+            - valid_metric
+            - valid_metric_bigger
+            - eval_batch_size
+            - metric_decimal_place
+        General:
+            - seed
+            - reproducibility
+            - state
+            - model
+            - data_path
+            - checkpoint_dir
+            - show_progress
+            - config_file
+            - log_wandb
+            - use_text
+            - strategy
+            - precision
+        Training:
+            - epochs
+            - train_batch_size
+            - optim_args
+            - eval_step
+            - stopping_step
+            - clip_grad_norm
+            - loss_decimal_place
+yaml_loader:
+    value: yaml.loader.FullLoader

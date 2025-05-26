@@ -1,0 +1,10 @@
+*.pyc
+*.log
+code/log/
+code/log_tensorboard/
+code/saved/
+checkpoint_dir/
+TinyLlama
+tmp_embedding.py
+/home/stu2/HLLM/dataset/amazon_books.csv
+/home/stu2/HLLM/information/amazon_books.csv

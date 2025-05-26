@@ -1,0 +1,8 @@
+.vscode
+checkpoint_dir/
+dataset/
+information/
+PixelRec/
+TinyLlama/
+.git
+pytorch_model/
